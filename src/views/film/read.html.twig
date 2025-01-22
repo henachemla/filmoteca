@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations sur le film{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Informations sur le film</h2>
+
+    <div class="card p-4 bg-light shadow">
+        <h3 class="card-title text-primary">{{ film.title }}</h3>
+        <p><strong>Année :</strong> {{ film.year }}</p>
+        <p><strong>Type :</strong> {{ film.type }}</p>
+        <p><strong>Réalisateur :</strong> {{ film.director }}</p>
+        <p><strong>Synopsis :</strong> {{ film.synopsis }}</p>
+        <p><strong>Date d'ajout :</strong> {{ film.createdAt.format('d/m/Y H:i') }}</p>
+        <p><strong>Dernière modification :</strong> {{ film.updatedAt ? film.updatedAt.format('d/m/Y H:i') : 'Jamais modifié' }}</p>
+        <a href="/film/list" class="btn btn-primary mt-3">Retour aux films</a>
+    </div>
+{% endblock %}

@@ -26,7 +26,7 @@ class DatabaseConnection
         if (self::$connection === null) {
             try {
                 // Crée le Data Source Name (DSN) pour la connexion à la base de données
-                $dsn = sprintf('mysql:host=%s;port=%d;dbname=%s;charset=utf8mb4', self::DB_HOST, self::DB_PORT, self::DB_NAME);
+                $dsn = sprintf('mysql:host=localhost;port=%d;dbname=filmoteca_db;charset=utf8mb4', self::DB_HOST, self::DB_PORT, self::DB_NAME);
 
                 // Initialise la connexion PDO avec le DSN, l'utilisateur et le mot de passe
                 self::$connection = new \PDO($dsn, self::DB_USER, self::DB_PASSWORD);
